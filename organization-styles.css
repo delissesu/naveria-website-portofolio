@@ -1,0 +1,58 @@
+/* Styles for Organization section */
+.organization-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.organization-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.organization-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: #dbeafe;
+}
+
+.organization-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    max-width: 100%;
+}
+
+.organization-card h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.organization-role {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.organization-desc {
+    margin: 0;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .organization-img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
