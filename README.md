@@ -8,7 +8,7 @@ Website portofolio yang menampilkan profil, keterampilan, pengalaman, organisasi
 
 ## Project Structure
 
-
+```
 naveria-portofolio/
 ├── index.html                 
 ├── style.css                 
@@ -56,10 +56,10 @@ naveria-portofolio/
     ├── sertif-my-skill.png
     ├── sertif-my-skill-2.png
     └── sertif-udemy.png
-
+```
 
 ### How To Use
-   bash
+   ```bash
    git clone https://github.com/delissesu/naveria-portofolio.git
    cd naveria-portofolio
-   
+   ```
