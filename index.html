@@ -25,8 +25,131 @@
     </script>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: white;
+        }
+
         html {
             scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .blue-line {
+            width: 60px;
+            height: 3px;
+            background-color: #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+        }
+
+        .button-outline {
+            background-color: transparent;
+            border: 2px solid #475569;
+            color: #cbd5e1;
+        }
+
+        .button-outline:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .skill-box {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-box:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+        }
+
+        .skill-box img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .navbar {
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.1);
         }
         
         .site-nav-links a.active {
@@ -181,94 +304,124 @@
 
     <main id="content" role="main" class="pt-16">
         
-<section class="section-hero pt-24 pb-32 scroll-m-20" id="home">
-            <div class="container-hero max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="hero-grid grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    
-                    <div class="about-copy text-center md:text-left order-2 md:order-1">
-                        <p class="skills-point text-sm font-semibold text-sky-400 uppercase tracking-wider mb-4 animate-fadeInDown">Beginner Software Developer & Video Editor</p>
-                        <h1 class="my-name text-5xl lg:text-7xl font-extrabold text-slate-100 mb-6 animate-fadeInUp delay-100">Aditya Dwi F.</h1>
-                        <p class="self-description text-lg text-slate-400 max-w-xl mx-auto md:mx-0 mb-8 animate-fadeInUp delay-200">Halo! Saya seorang mahasiswa Informatika yang antusias dengan pengembangan perangkat lunak dan dunia kreatif. Saya memiliki rasa penasaran yang tinggi serta kemampuan beradaptasi yang cepat.</p>
-                        <div class="hero-ctas flex flex-wrap gap-4 justify-center md:justify-start animate-fadeInUp delay-300">
-                            <a class="cta-btn inline-flex items-center px-8 py-3 bg-sky-500 text-white font-bold rounded-full shadow-lg shadow-sky-500/30 hover:bg-sky-600 transition-all transform hover:-translate-y-1" href="#contact">Contact Me</a>
-                            <a class="cta-btn ghost inline-flex items-center px-8 py-3 bg-transparent border-2 border-slate-600 text-slate-300 font-bold rounded-full hover:bg-slate-800 hover:border-slate-500 transition-all transform hover:-translate-y-1" href="assets/pdf/2024_CV_Aditya Dwi Ferdiansyah.pdf" download="Aditya_Dwi_Ferdiansyah_CV_2024.pdf" target="_blank" rel="noopener">Download CV</a>
-                        </div>
-                    </div>
-                    
-                    </div>
+        <!-- Hero Section -->
+        <section class="section" id="home" style="padding-top: 120px;">
+            <div class="container">
+                <p style="color: #60a5fa; font-size: 14px; text-transform: uppercase; margin-bottom: 20px;">Software Developer & Video Editor</p>
+                <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 20px;">Aditya Dwi Ferdiansyah</h1>
+                <div class="blue-line"></div>
+                <p class="description" style="max-width: 600px; line-height: 1.8;">
+                    Mahasiswa Informatika yang berfokus pada pengembangan perangkat lunak dan konten kreatif. 
+                    Memiliki passion dalam teknologi dan selalu antusias untuk belajar hal baru.
+                </p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#contact" class="button">Contact Me</a>
+                    <a href="assets/pdf/2024_CV_Aditya Dwi Ferdiansyah.pdf" download class="button button-outline">Download CV</a>
+                </div>
             </div>
         </section>  
         
-        <section class="section-skills py-24 bg-slate-900/70 scroll-m-20" id="naveria-skills">
-            <div class="container-skills max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate-fadeInDown">
-                    <h2 class="nama-section text-4xl font-bold text-white mb-4">Hard Skills</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Kumpulan teknologi dan alat yang saya gunakan untuk membangun dan menciptakan sesuatu.</p>
-                </div>
-                <div class="skills-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-6">
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-100">
-                        <img src="assets/images/skills/figma.png" alt="Figma Logo" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">Figma</span>
+        <!-- Hard Skills Section -->
+        <section class="section" id="naveria-skills" style="background-color: rgba(15, 23, 42, 0.5);">
+            <div class="container">
+                <h2 class="section-title">Hard Skills</h2>
+                <div class="blue-line"></div>
+                <p class="description">Teknologi dan tools yang saya gunakan dalam pengembangan dan desain.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px;">
+                    <div class="skill-box">
+                        <img src="assets/images/skills/figma.png" alt="Figma">
+                        <p style="color: #cbd5e1; font-size: 14px;">Figma</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
-                        <img src="assets/images/skills/after-effects.png" alt="After Effects Logo" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">After Effects</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/after-effects.png" alt="After Effects">
+                        <p style="color: #cbd5e1; font-size: 14px;">After Effects</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
-                        <img src="assets/images/skills/python.png" alt="Python Logo" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">Python</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/python.png" alt="Python">
+                        <p style="color: #cbd5e1; font-size: 14px;">Python</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-200">
-                        <img src="assets/images/skills/html.png" alt="HTML Logo" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">HTML</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/html.png" alt="HTML">
+                        <p style="color: #cbd5e1; font-size: 14px;">HTML</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-300">
-                        <img src="assets/images/skills/css-3.png" alt="CSS Logo" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">CSS</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/css-3.png" alt="CSS">
+                        <p style="color: #cbd5e1; font-size: 14px;">CSS</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-400">
-                        <img src="assets/images/skills/icons8-postgresql.svg" alt="PostgreSQL Logo" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">PostgreSQL</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/icons8-postgresql.svg" alt="PostgreSQL">
+                        <p style="color: #cbd5e1; font-size: 14px;">PostgreSQL</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-500">
-                        <img src="assets/images/skills/1691819804alight-motion-logo-png.png" alt="Alight Motion" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">Alight Motion</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/1691819804alight-motion-logo-png.png" alt="Alight Motion">
+                        <p style="color: #cbd5e1; font-size: 14px;">Alight Motion</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-600">
-                        <img src="assets/images/skills/c-.png" alt="C++" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">C++</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/c-.png" alt="C++">
+                        <p style="color: #cbd5e1; font-size: 14px;">C++</p>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-100">
-                        <img src="assets/images/skills/c-sharp.png" alt="C#" class="w-14 h-14 object-contain">
-                        <span class="font-semibold text-slate-300 text-sm text-center">C#</span>
+                    <div class="skill-box">
+                        <img src="assets/images/skills/c-sharp.png" alt="C#">
+                        <p style="color: #cbd5e1; font-size: 14px;">C#</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="section-soft-skills py-24 scroll-m-20" id="naveria-soft-skills">
-            <div class="container-soft-skills max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate-fadeInDown">
-                    <h2 class="nama-section text-4xl font-bold text-white mb-4">Soft Skills</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Keterampilan non-teknis yang mendukung kolaborasi, kepemimpinan, dan pertumbuhan pribadi.</p>
                 </div>
-                <div class="soft-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-100">
-                        <h3 class="text-xl font-bold text-white mb-4">Team Management</h3>
-                        <p class="text-slate-400">Mampu membagi peran, mengatur prioritas, dan menjaga ritme kerja tim agar target tercapai.</p>
+            </div>
+        </section>
+
+        <!-- Soft Skills Section -->
+        <section class="section" id="naveria-soft-skills">
+            <div class="container">
+                <h2 class="section-title">Soft Skills</h2>
+                <div class="blue-line"></div>
+                <p class="description">Kemampuan interpersonal yang mendukung kolaborasi dan pertumbuhan profesional.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                    <div class="card">
+                        <div style="width: 50px; height: 50px; background-color: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <svg style="width: 25px; height: 25px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 15px;">Team Management</h3>
+                        <p style="color: #94a3b8; line-height: 1.6;">Mampu membagi peran, mengatur prioritas, dan menjaga ritme kerja tim agar target tercapai.</p>
                     </div>
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-200">
-                        <h3 class="text-xl font-bold text-white mb-4">Communication</h3>
-                        <p class="text-slate-400">Terbiasa menyampaikan ide secara jelas, menerima feedback, dan menjaga komunikasi.</p>
+                    
+                    <div class="card">
+                        <div style="width: 50px; height: 50px; background-color: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <svg style="width: 25px; height: 25px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 15px;">Communication</h3>
+                        <p style="color: #94a3b8; line-height: 1.6;">Terbiasa menyampaikan ide secara jelas, menerima feedback, dan menjaga komunikasi.</p>
                     </div>
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-300">
-                        <h3 class="text-xl font-bold text-white mb-4">Interpersonal Skill</h3>
-                        <p class="text-slate-400">Membangun hubungan ke rekan yang lain dengan positif dan saling menghargai satu sama lain.</p>
+                    
+                    <div class="card">
+                        <div style="width: 50px; height: 50px; background-color: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <svg style="width: 25px; height: 25px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 15px;">Interpersonal Skill</h3>
+                        <p style="color: #94a3b8; line-height: 1.6;">Membangun hubungan ke rekan yang lain dengan positif dan saling menghargai satu sama lain.</p>
                     </div>
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-400">
-                        <h3 class="text-xl font-bold text-white mb-4">Emotional Intelligence</h3>
-                        <p class="text-slate-400">Mengelola emosi dan empati dalam tim, membantu penyelesaian konflik.</p>
+                    
+                    <div class="card">
+                        <div style="width: 50px; height: 50px; background-color: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <svg style="width: 25px; height: 25px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 15px;">Emotional Intelligence</h3>
+                        <p style="color: #94a3b8; line-height: 1.6;">Mengelola emosi dan empati dalam tim, membantu penyelesaian konflik.</p>
                     </div>
+                </div>
+            </div>
+        </section>
                 </div>
             </div>
         </section>
@@ -438,21 +591,27 @@
             </div>
         </section>
 
-        <section class="section-portofolio py-24 bg-slate-900/70 scroll-m-20" id="naveria-portofollio">
-            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate-fadeInDown">
-                    <h2 class="nama-section text-4xl font-bold text-white mb-4">Naveria's Portofolio 2024!</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Kompilasi karya dan proyek yang telah saya buat.</p>
-                </div>
-                <div class="portfolio-viewer bg-slate-800/50 border border-slate-700 rounded-xl p-2 sm:p-3 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50 animate-scaleIn delay-100">
+        <!-- Portfolio Section -->
+        <section class="section" id="naveria-portofollio" style="background-color: rgba(15, 23, 42, 0.5);">
+            <div class="container">
+                <h2 class="section-title">Portfolio</h2>
+                <div class="blue-line"></div>
+                <p class="description">Kompilasi karya dan proyek yang telah saya buat sepanjang perjalanan kreatif.</p>
+                
+                <div class="card" style="padding: 20px;">
                     <iframe 
                         src="assets/pdf/Aditya F. Portofolio.pdf" 
                         title="Aditya F. Portofolio"
-                        class="w-full h-[600px] md:h-[800px] rounded-lg border border-slate-700"
-                        loading="lazy"
+                        style="width: 100%; height: 600px; border: 1px solid #334155; border-radius: 8px;"
                     ></iframe>
-                    <div class="mt-6 text-center">
-                        <a class="cta-btn inline-flex items-center px-8 py-3 bg-sky-500 text-white font-bold rounded-full shadow-lg shadow-sky-500/30 hover:bg-sky-600 transition-all transform hover:-translate-y-1" href="assets/pdf/Aditya F. Portofolio.pdf" target="_blank" rel="noopener">Buka di Tab Baru</a>
+                    
+                    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <a href="assets/pdf/Aditya F. Portofolio.pdf" target="_blank" class="button">
+                            Buka di Tab Baru
+                        </a>
+                        <a href="assets/pdf/Aditya F. Portofolio.pdf" download class="button button-outline">
+                            Download PDF
+                        </a>
                     </div>
                 </div>
             </div>
