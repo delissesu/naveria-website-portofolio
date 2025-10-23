@@ -1,3 +1,6 @@
+/* Import Font Baru yang Lebih Modern */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -6,11 +9,14 @@ html {
     scroll-behavior: smooth;
 }
 
+/* === DARK MODE THEME === */
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    color: #1a1a1a;
-    background-color: #fafafa;
+    /* Font baru */
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    /* Warna background utama */
+    color: #c9d1d9; /* Teks abu-abu muda */
+    background-color: #0d1117; /* GitHub Dark Mode */
     line-height: 1.6;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
@@ -26,24 +32,28 @@ body {
 
 .section, .section-hero, .section-skills, .section-soft-skills, .section-experience, 
 .section-organization, .section-committee, .section-certificates, .section-portofolio {
-    padding: 48px 0;
+    padding: 64px 0; /* Padding lebih besar */
 }
 
+/* Judul Section Baru */
 .section-title, .nama-section {
-    font-size: 24px;
+    font-size: 32px; /* Lebih besar */
     font-weight: 700;
-    margin: 0 0 24px;
-    color: #1a1a1a;
+    margin: 0 0 32px;
+    color: #e6edf3; /* Teks putih */
     letter-spacing: -0.025em;
+    text-align: center; /* Pusatkan judul */
 }
 
+/* === NAVBAR BARU (Dark Mode) === */
 .site-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(250, 250, 250, 0.95);
+    /* Background navbar dark mode dengan blur */
+    background-color: rgba(13, 17, 23, 0.85);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #30363d; /* Border lebih gelap */
     z-index: 50;
     padding: 0;
 }
@@ -58,19 +68,19 @@ body {
 
 .site-logo {
     text-decoration: none;
-    color: #1a1a1a;
+    color: #e6edf3;
     transition: color 200ms ease;
 }
 
 .site-logo:hover {
-    color: #2563eb;
+    color: #58a6ff; /* Aksen biru baru */
 }
 
 .site-logo-text {
     font-size: 20px;
-    background-color: rgba(250, 250, 250, 0.95);
     letter-spacing: -0.025em;
     color: inherit;
+    background-color: transparent; /* Hapus background putih */
 }
 
 .site-nav-links {
@@ -81,7 +91,7 @@ body {
 
 .site-nav-links a {
     text-decoration: none;
-    color: #4a4a4a;
+    color: #8b949e; /* Teks sekunder */
     font-size: 14px;
     font-weight: 500;
     padding: 8px 16px;
@@ -92,74 +102,86 @@ body {
 }
 
 .site-nav-links a:hover {
-    color: #1a1a1a;
-    background-color: #f3f4f6;
+    color: #e6edf3; /* Teks putih */
+    background-color: #161b22; /* Background hover gelap */
 }
 
+/* Link Aktif Baru */
 .site-nav-links a.active {
-    color: #2563eb;
-    background-color: #dbeafe;
+    color: #58a6ff; /* Aksen biru */
+    background-color: rgba(88, 166, 255, 0.1);
     font-weight: 600;
 }
 
 .site-nav-links a.active:hover {
-    color: #1d4ed8;
-    background-color: #dbeafe;
+    color: #58a6ff;
+    background-color: rgba(88, 166, 255, 0.15);
 }
 
 #naveria-skills, #naveria-soft-skills, #naveria-experience, #naveria-organization, #naveria-committee, 
 #naveria-certificate, #naveria-portofollio { 
-    scroll-margin-top: 80px; 
+    scroll-margin-top: 90px; /* Disesuaikan dengan padding section */
 }
 
+/* === HERO SECTION BARU (Lebih "Aesthetic") === */
 .section-hero { 
-    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-    padding-top: 48px;
+    /* Gradient background gelap yang subtil */
+    background: radial-gradient(circle, rgba(22, 27, 34, 0.5) 0%, #0d1117 70%);
+    padding-top: 120px; /* Padding lebih besar */
+    padding-bottom: 64px;
 }
 
 .hero-grid { 
     display: grid; 
     grid-template-columns: 1.1fr 0.9fr; 
-    gap: 40px; 
+    gap: 48px; 
     align-items: center; 
-    min-height: 480px;
 }
 
 .skills-point { 
     margin: 0 0 12px; 
-    color: #2563eb; 
+    color: #58a6ff; /* Aksen biru */
     font-weight: 600; 
     letter-spacing: 0.05em; 
     font-size: 14px; 
     text-transform: uppercase;
 }
 
+/* Nama dengan Efek Gradient (Keren!) */
 .my-name { 
     margin: 0 0 16px; 
-    font-size: 48px;
+    font-size: 56px;
     line-height: 1.1; 
     font-weight: 700; 
-    letter-spacing: -0.025em; 
-    color: #1a1a1a;
+    letter-spacing: -0.025em;
+    /* Efek Gradient pada Teks */
+    background: linear-gradient(to right, #e6edf3, #a5d6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .self-description { 
-    margin: 0 0 20px; 
+    margin: 0 0 24px; 
     font-size: 18px; 
-    color: #4a4a4a; 
+    color: #8b949e; /* Teks sekunder */
     line-height: 1.6;
     max-width: 540px;
 }
 
+/* Foto Portrait Baru (Kotak rounded + Glow) */
 .hero-portrait { 
     justify-self: center; 
     width: 100%; 
-    max-width: 360px;
+    max-width: 400px; /* Sedikit lebih besar */
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 16px; /* Rounded rectangle, bukan lingkaran */
     aspect-ratio: 1 / 1;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Efek "Glow" yang "Aesthetic" */
+    box-shadow: 0 0 60px -10px rgba(88, 166, 255, 0.3);
+    border: 1px solid #30363d;
 }
 
 .hero-portrait img {
@@ -167,7 +189,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%;
+    object-position: center 25%; /* Disesuaikan agar pas */
     border: none;
     transition: transform 0.5s ease-in-out;
 }
@@ -180,54 +202,60 @@ body {
     display: flex; 
     gap: 12px; 
     flex-wrap: wrap;
+    margin-top: 24px;
 }
 
+/* === Tombol CTA Baru (Dark Mode) === */
 .cta-btn {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    background: #2563eb;
-    color: white;
+    background: #58a6ff; /* Aksen biru */
+    color: #0d1117; /* Teks gelap */
     padding: 12px 20px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
     transition: all 200ms ease;
-    border: 1px solid #2563eb;
+    border: 1px solid #58a6ff;
 }
 
 .cta-btn:hover {
-    background: #1d4ed8;
-    border-color: #1d4ed8;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background: #80b6f9;
+    border-color: #80b6f9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
 }
 
 .cta-btn.ghost {
     background: transparent;
-    color: #2563eb;
-    border: 1px solid #e5e7eb;
+    color: #58a6ff; /* Teks biru */
+    border: 1px solid #58a6ff; /* Border biru */
 }
 
 .cta-btn.ghost:hover {
-    background: #dbeafe;
-    border-color: #2563eb;
-    color: #1d4ed8;
+    background: rgba(88, 166, 255, 0.1); /* Background hover subtil */
+    border-color: #58a6ff;
+    color: #58a6ff;
 }
 
-.soft-card, .exp-card, .certificate-card, .committee-item, .skill-card, .organization-card {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    border: 1px solid #e5e7eb;
-    transition: all 200ms ease;
+/* === DESAIN KARTU BARU (Profesional) === */
+.soft-card, .exp-card, .certificate-card, .committee-item, .skill-card, .organization-card, .portfolio-viewer {
+    background: #161b22; /* Warna kartu gelap */
+    border-radius: 12px; /* Lebih rounded */
+    padding: 24px;
+    border: 1px solid #30363d; /* Border gelap */
+    transition: all 0.3s ease;
 }
 
-.soft-card:hover, .exp-card:hover, .certificate-card:hover, .committee-item:hover, .skill-card:hover, .organization-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border-color: #dbeafe;
+.soft-card:hover, .exp-card:hover, .certificate-card:hover, .committee-item:hover, .skill-card:hover, .organization-card:hover, .portfolio-viewer:hover {
+    /* Efek hover yang lebih "profesional" */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: #58a6ff; /* Border aksen saat hover */
 }
+/* === End Desain Kartu Baru === */
+
 
 .skills-grid {
     display: grid;
@@ -241,10 +269,13 @@ body {
     gap: 20px;
 }
 
+/* Membuat Experience lebih rapi (1 kolom) */
 .exp-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 900px; /* Lebih ramping */
+    margin: 0 auto;
 }
 
 .certificate-grid {
@@ -257,12 +288,16 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .committee-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .skill-card {
@@ -271,6 +306,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 20px; /* Padding disesuaikan */
 }
 
 .skill-card img {
@@ -283,27 +319,27 @@ body {
 .skill-card span {
     font-size: 14px;
     font-weight: 500;
-    color: #4a4a4a;
+    color: #c9d1d9; /* Teks abu-abu muda */
 }
 
 .soft-card h3, .exp-card h3, .organization-card h3 {
     margin: 0 0 12px;
-    font-size: 18px;
+    font-size: 20px; /* Sedikit lebih besar */
     font-weight: 600;
-    color: #1a1a1a;
+    color: #e6edf3; /* Teks putih */
 }
 
-.soft-card p, .exp-desc {
+.soft-card p, .exp-desc, .organization-desc {
     margin: 0;
-    font-size: 14px;
-    color: #4a4a4a;
-    line-height: 1.5;
+    font-size: 15px; /* Sedikit lebih besar */
+    color: #8b949e; /* Teks sekunder */
+    line-height: 1.6;
 }
 
 .exp-year {
     margin: 0 0 12px;
     font-size: 12px;
-    color: #6b7280;
+    color: #8b949e; /* Teks sekunder */
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -311,15 +347,15 @@ body {
 
 .committee-item h4 {
     margin: 0 0 8px;
-    font-size: 16px;
+    font-size: 18px; /* Lebih besar */
     font-weight: 600;
-    color: #1a1a1a;
+    color: #e6edf3;
 }
 
 .committee-source, .certificate-source, .organization-role {
     margin: 0;
-    font-size: 12px;
-    color: #6b7280;
+    font-size: 13px;
+    color: #8b949e;
     font-weight: 500;
 }
 
@@ -334,6 +370,7 @@ body {
     display: block;
     margin-bottom: 16px;
     transition: transform 200ms ease;
+    border: 1px solid #30363d;
 }
 
 .certificate-card:hover .cert-thumb {
@@ -343,44 +380,36 @@ body {
 .certificate-card h3 {
     font-size: 16px;
     margin: 8px 0;
-    color: #1a1a1a;
+    color: #e6edf3;
 }
 
 .portfolio-viewer {
     padding: 20px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    background: #ffffff;
 }
 
+/* === Perbaikan Layout Organisasi === */
 .organization-img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 250px; /* Tentukan tinggi tetap */
+    object-fit: cover; /* Crop gambar agar rapi (profesional) */
     border-radius: 8px;
     margin-bottom: 16px;
-    max-width: 100%;
+    border: 1px solid #30363d;
 }
 
 .organization-role {
     margin: 0 0 12px;
     font-size: 14px;
-    color: #2563eb;
+    color: #58a6ff; /* Aksen biru */
     font-weight: 600;
 }
 
-.organization-desc {
-    margin: 0;
-    font-size: 14px;
-    color: #4a4a4a;
-    line-height: 1.5;
-}
-
+/* === FOOTER BARU (Dark Mode) === */
 .site-footer {
     padding: 40px 0;
     text-align: center;
-    background: #ffffff;
-    border-top: 1px solid #e5e7eb;
+    background: #161b22; /* Background gelap */
+    border-top: 1px solid #30363d; /* Border gelap */
     margin-top: 48px;
 }
 
@@ -398,22 +427,30 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #30363d;
     transition: all 200ms ease;
+    background: #0d1117; /* Latar tombol */
 }
 
 .social-icons a:hover {
-    border-color: #2563eb;
-    background: #dbeafe;
-    transform: translateY(-1px);
+    border-color: #58a6ff;
+    background: rgba(88, 166, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .social-icons img {
     height: 20px;
     width: 20px;
     object-fit: contain;
+    /* Filter untuk ikon putih (jika ikonnya hitam) */
+    /* filter: invert(1) grayscale(1) brightness(2); */
 }
 
+.site-footer p {
+    color: #8b949e;
+}
+
+/* Tombol Back to Top (Dark Mode) */
 #backToTop {
     position: fixed;
     right: 20px;
@@ -421,16 +458,16 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #1a1a1a;
+    border: 1px solid #30363d;
+    background: #161b22;
+    color: #c9d1d9;
     cursor: pointer;
     font-size: 16px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(8px);
     transition: all 200ms ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 #backToTop.show {
@@ -440,11 +477,12 @@ body {
 }
 
 #backToTop:hover {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
+    background: #58a6ff;
+    color: #0d1117;
+    border-color: #58a6ff;
 }
 
+/* === Responsive Tweaks === */
 @media (max-width: 768px) {
     .container, .container-header, .container-hero, .container-skills, .container-soft-skills, 
     .container-experience, .container-organization, .container-committee {
@@ -453,25 +491,50 @@ body {
     
     .hero-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 32px;
         text-align: center;
     }
     
-    .display-title {
-        font-size: 32px;
+    .about-copy {
+        order: 2; /* Teks di bawah gambar */
+    }
+
+    .hero-portrait {
+        order: 1; /* Gambar di atas teks */
+        max-width: 300px; /* Kecilkan di mobile */
+        margin: 0 auto;
+    }
+
+    .hero-ctas {
+        justify-content: center; /* Tombol di tengah */
     }
     
+    .my-name { /* Kecilkan font di mobile */
+        font-size: 40px;
+    }
+
+    .section-title, .nama-section {
+        font-size: 28px;
+    }
+    
+    /* Navigasi di mobile (scroll horizontal jika perlu) */
+    .site-nav {
+        overflow-x: auto;
+    }
+
     .site-nav-links {
         gap: 4px;
+        padding-left: 16px; /* Beri jarak dari logo */
     }
     
     .site-nav-links a {
         padding: 8px 12px;
         font-size: 13px;
+        flex-shrink: 0; /* Agar tidak menyusut */
     }
     
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 12px;
     }
     
@@ -480,18 +543,18 @@ body {
         gap: 16px;
     }
     
-    .hero-portrait {
-        max-width: 320px;
-        margin: 0 auto;
-    }
-    
+    /* Hapus paksa di HTML */
     .hero-portrait img { 
-        height: 450px; 
+        height: auto; /* Biarkan Ganti */
+        object-position: center 25%;
     }
     
     .organization-img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
+        height: 200px; /* Lebih pendek di mobile */
+    }
+
+    /* Perbaikan layout organization-card di mobile */
+    .organization-card {
+        display: block; /* Kembali ke layout tumpuk */
     }
 }
