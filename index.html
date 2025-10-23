@@ -1,275 +1,303 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya — Portfolio</title>
     <meta name="description" content="Nvaeria Portofolio">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        /* Menambahkan style kustom untuk kelas yg dikontrol JS */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Ini adalah kelas "active" yang ditambahkan oleh script.js Anda */
+        .site-nav-links a.active {
+            @apply text-blue-500 bg-blue-500/10 font-semibold;
+        }
+
+        /* Ini adalah kelas "show" yang ditambahkan oleh script.js Anda */
+        #backToTop.show {
+            @apply opacity-100 visible translate-y-0;
+        }
+
+        /* Memberi sedikit filter pada ikon sosial di footer */
+        .social-icons img {
+            @apply filter invert brightness-100 opacity-75 group-hover:opacity-100 transition-opacity;
+        }
+    </style>
 </head>
-<body>
-    <div class="site-header">
-        <div class="container-header">
-            <div class="site-nav">
-                <a class="site-logo" href="#home">
-                    <span class="site-logo-text" style="font-weight: bold;">Naveria</span>
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    
+    <div class="site-header sticky top-0 w-full bg-gray-900/80 backdrop-blur-lg border-b border-gray-700/60 z-50">
+        <div class="container-header max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="site-nav flex justify-between items-center py-4 min-h-[64px] overflow-x-auto">
+                <a class="site-logo flex-shrink-0" href="#home">
+                    <span class="site-logo-text text-xl font-bold text-white hover:text-blue-500 transition-colors">Naveria</span>
                 </a>
-                <div class="site-nav-links">
-                    <a href="#home">About</a>
-                    <a href="#naveria-skills">Skills</a>
-                    <a href="#naveria-experience">Experience</a>
-                    <a href="#naveria-organization">Organization</a>
-                    <a href="#naveria-committee">Committee</a>
-                    <a href="#naveria-certificate">Certificates</a>
-                    <a href="#naveria-portofollio">Portfolio</a>
+                <div class="site-nav-links flex items-center gap-1 sm:gap-2">
+                    <a href="#home" class="text-gray-400 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-all flex-shrink-0">About</a>
+                    <a href="#naveria-skills" class="text-gray-400 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-all flex-shrink-0">Skills</a>
+                    <a href="#naveria-experience" class="text-gray-400 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-all flex-shrink-0">Experience</a>
+                    <a href="#naveria-organization" class="text-gray-400 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-all flex-shrink-0">Organization</a>
+                    <a href="#naveria-committee" class="text-gray-400 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-all flex-shrink-0">Committee</a>
+                    <a href="#naveria-certificate" class="text-gray-400 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-all flex-shrink-0">Certificates</a>
+                    <a href="#naveria-portofollio" class="text-gray-400 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-all flex-shrink-0">Portfolio</a>
                 </div>
             </div>
         </div>
     </div>
 
     <main id="content" role="main">
-        <section class="section-hero" id="home">
-            <div class="container-hero">
-                <div class="hero-grid">
-                    <div class="about-copy">
-                        <p class="skills-point">Beginner Software Developer & Video Editor</p>
-                        <h1 class="my-name">Aditya</h1>
-                        <p class="self-description">Halo! Saya Aditya Dwi Ferdiansyah seorang mahasiswa Informatika di Universitas Jember. Saya memiliki rasa penasaran yang tinggi serta kemampuan beradaptasi yang cepat. Ketertarikan saya pada dunia teknologi dan kreativitas mendorong saya untuk terus belajar.</p>
-                        <div class="hero-ctas">
-                            <a class="cta-btn" href="#contact">Contact Me</a>
-                            <a class="cta-btn ghost" href="assets/pdf/2024_CV_Aditya Dwi Ferdiansyah.pdf" download="Aditya_Dwi_Ferdiansyah_CV_2024.pdf" target="_blank" rel="noopener">Download CV</a>
-                            <a class="cta-btn ghost" href="#naveria-portofollio">Lihat Portfolio</a>
+        
+        <section class="section-hero pt-24 pb-16 scroll-m-20" id="home">
+            <div class="container-hero max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="hero-grid grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="about-copy text-center md:text-left order-2 md:order-1">
+                        <p class="skills-point text-sm font-semibold text-blue-500 uppercase tracking-wider mb-3">Beginner Software Developer & Video Editor</p>
+                        <h1 class="my-name text-5xl lg:text-6xl font-extrabold text-white mb-4 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">Aditya</h1>
+                        <p class="self-description text-lg text-gray-400 max-w-xl mx-auto md:mx-0 mb-6">Halo! Saya Aditya Dwi Ferdiansyah seorang mahasiswa Informatika di Universitas Jember. Saya memiliki rasa penasaran yang tinggi serta kemampuan beradaptasi yang cepat.</p>
+                        <div class="hero-ctas flex flex-wrap gap-3 justify-center md:justify-start">
+                            <a class="cta-btn inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all transform hover:-translate-y-1" href="#contact">Contact Me</a>
+                            <a class="cta-btn ghost inline-flex items-center px-6 py-3 bg-transparent border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600/10 transition-all transform hover:-translate-y-1" href="assets/pdf/2024_CV_Aditya Dwi Ferdiansyah.pdf" download="Aditya_Dwi_Ferdiansyah_CV_2024.pdf" target="_blank" rel="noopener">Download CV</a>
+                            <a class="cta-btn ghost inline-flex items-center px-6 py-3 bg-transparent border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600/10 transition-all transform hover:-translate-y-1" href="#naveria-portofollio">Lihat Portfolio</a>
                         </div>
                     </div>
-                    <div class="hero-portrait">
-                        <img src="assets/images/Aditya.png" alt="Foto Aditya" />
+                    <div class="hero-portrait relative w-full max-w-sm mx-auto aspect-square rounded-full overflow-hidden shadow-2xl shadow-blue-900/50 order-1 md:order-2">
+                        <img src="assets/images/Aditya.png" alt="Foto Aditya" class="w-full h-full object-cover object-[center_30%] transition-transform duration-500 hover:scale-105" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-skills py-16 scroll-m-20" id="naveria-skills">
+            <div class="container-skills max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="nama-section text-3xl font-bold text-white text-center mb-12">Hard Skills</h2>
+                <div class="skills-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/figma.png" alt="Figma Logo" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">Figma</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/after-effects.png" alt="After Effects Logo" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">After Effects</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/python.png" alt="Python Logo" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">Python</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/html.png" alt="HTML Logo" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">HTML</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/css-3.png" alt="CSS Logo" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">CSS</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/icons8-postgresql.svg" alt="PostgreSQL Logo" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">PostgreSQL</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/1691819804alight-motion-logo-png.png" alt="Alight Motion" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">Alight Motion</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/c-.png" alt="C++" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">C++</span>
+                    </div>
+                    <div class="skill-card bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <img src="assets/images/skills/c-sharp.png" alt="C#" class="w-12 h-12 object-contain">
+                        <span class="font-medium text-gray-300 text-sm text-center">C#</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-skills" id="naveria-skills">
-            <div class="container-skills">
-                <h2 class="nama-section">Hard Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <img src="assets/images/skills/figma.png" alt="Figma Logo">
-                        <span>Figma</span>
+        <section class="section-soft-skills py-16 bg-gray-800/30 scroll-m-20" id="naveria-soft-skills">
+            <div class="container-soft-skills max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="nama-section text-3xl font-bold text-white text-center mb-12">Soft Skills</h2>
+                <div class="soft-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="soft-card bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <h3 class="text-xl font-semibold text-white mb-3">Team Management</h3>
+                        <p class="text-gray-400 text-sm">Mampu membagi peran, mengatur prioritas, dan menjaga ritme kerja tim agar target tercapai.</p>
                     </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/after-effects.png" alt="After Effects Logo">
-                        <span>After Effects</span>
+                    <div class="soft-card bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <h3 class="text-xl font-semibold text-white mb-3">Communication</h3>
+                        <p class="text-gray-400 text-sm">Terbiasa menyampaikan ide secara jelas, menerima feedback, dan menjaga komunikasi.</p>
                     </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/python.png" alt="Python Logo">
-                        <span>Python</span>
+                    <div class="soft-card bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <h3 class="text-xl font-semibold text-white mb-3">Interpersonal Skill</h3>
+                        <p class="text-gray-400 text-sm">Membangun hubungan ke rekan yang lain dengan positif dan saling menghargai satu sama lain.</p>
                     </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/html.png" alt="HTML Logo">
-                        <span>HTML</span>
-                    </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/css-3.png" alt="CSS Logo">
-                        <span>CSS</span>
-                    </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/icons8-postgresql.svg" alt="PostgreSQL Logo">
-                        <span>PostgreSQL</span>
-                    </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/1691819804alight-motion-logo-png.png" alt="Alight Motion">
-                        <span>Alight Motion</span>
-                    </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/c-.png" alt="C++">
-                        <span>C++</span>
-                    </div>
-                    <div class="skill-card">
-                        <img src="assets/images/skills/c-sharp.png" alt="C#">
-                        <span>C#</span>
+                    <div class="soft-card bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <h3 class="text-xl font-semibold text-white mb-3">Emotional Intelligence</h3>
+                        <p class="text-gray-400 text-sm">Mengelola emosi dan empati dalam tim, membantu penyelesaian konflik.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-soft-skills" id="naveria-soft-skills">
-            <div class="container-soft-skills">
-                <h2 class="nama-section">Soft Skills</h2>
-                <div class="soft-grid">
-                    <div class="soft-card">
-                        <h3>Team Management</h3>
-                        <p>Mampu membagi peran, mengatur prioritas, dan menjaga ritme kerja tim agar target tercapai tanpa mengorbankan kualitas.</p>
+        <section class="section-experience py-16 scroll-m-20" id="naveria-experience">
+            <div class="container-experience max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="nama-section text-3xl font-bold text-white text-center mb-12">My Experience</h2>
+                <div class="exp-grid grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="exp-card bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <p class="exp-year text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">2024</p>
+                        <h3 class="text-xl font-semibold text-white mb-3">Social Media Designer</h3>
+                        <p class="exp-desc text-gray-400 text-sm">Membuat dan mengelola materi branding media sosial untuk seorang guru di Surabaya, termasuk penyusunan konten, editing video, dan pembuatan desain poster.</p>
                     </div>
-                    <div class="soft-card">
-                        <h3>Communication</h3>
-                        <p>Terbiasa menyampaikan ide secara jelas, menerima feedback, dan menjaga komunikasi.</p>
-                    </div>
-                    <div class="soft-card">
-                        <h3>Interpersonal Skill</h3>
-                        <p>Membangun hubungan ke rekan yang lain dengan positif dan saling menghargai satu sama lain.</p>
-                    </div>
-                    <div class="soft-card">
-                        <h3>Emotional Intelligence</h3>
-                        <p>Mengelola emosi dan empati dalam tim, membantu penyelesaian konflik dan pengambilan keputusan yang baik.</p>
+                    <div class="exp-card bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <p class="exp-year text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">September 2024 – Now</p>
+                        <h3 class="text-xl font-semibold text-white mb-3">MV Editor</h3>
+                        <p class="exp-desc text-gray-400 text-sm">Membuat video clip vtuber/streamer baik short atau long. Intinya ngedit suka-suka, ada job editing berorientasi ke anime saya gaskan.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-experience" id="naveria-experience">
-            <div class="container-experience">
-                <h2 class="nama-section">My Experience</h2>
-                <div class="exp-grid">
-                    <div class="exp-card">
-                        <h3>Social Media Designer</h3>
-                        <p class="exp-year">2024</p>
-                        <p class="exp-desc">Membuat dan mengelola materi branding media sosial untuk seorang guru di Surabaya, termasuk penyusunan konten, editing video, dan pembuatan desain poster.</p>
-                    </div>
-                    <div class="exp-card">
-                        <h3>MV Editor</h3>
-                        <p class="exp-year">September 2024 – Now</p>
-                        <p class="exp-desc">Membuat video clip vtuber/streamer baik short atau long. Intinya ngedit suka-suka, ada job editing berorientasi ke anime saya gaskan.  </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-organization" id="naveria-organization">
-            <div class="container-organization">
-                <h2 class="nama-section">Organization</h2>
+        <section class="section-organization py-16 bg-gray-800/30 scroll-m-20" id="naveria-organization">
+            <div class="container-organization max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="nama-section text-3xl font-bold text-white text-center mb-12">Organization</h2>
                 <div class="organization-grid">
-                    <div class="organization-card">
-                        <img class="organization-img" src="assets/images/HMIF-PICT.JPG" alt="HMIF UNEJ" loading="lazy"/>
-                        <h3>Himpunan Mahasiswa Informatika</h3>
-                        <p class="organization-role">Anggota Divisi Media dan Teknologi</p>
-                        <p class="organization-desc">Menjadi anggota divisi media yang bertanggung jawab untuk mengelola konten sosial media HMIF Universitas Jember.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-committee" id="naveria-committee">
-            <div class="container-committee">
-                <h2 class="nama-section">Committee</h2>
-                <div class="committee-list">
-                    <div class="committee-item">
-                        <h4>Friendship Competition as Staff PDD</h4>
-                        <p class="committee-source">BEM Fasilkom</p>
-                        <!-- <iframe 
-                            src="Friendship/Aditya Dwi Ferdiansyah.pdf" 
-                            title="Sertifikat Friendship Competition"
-                            style="width: 100%; height: 420px; border: 0;"
-                            loading="lazy"
-                        ></iframe> -->
-                        <div style="text-align:right; margin-top: 8px;">
-                            <a class="cta-btn ghost" href="Friendship/Aditya Dwi Ferdiansyah.pdf" target="_blank" rel="noopener">Lihat Sertifikat</a>
-                        </div>
-                    </div>
-                    <div class="committee-item">
-                        <h4>Pelatihan Linux as Staff PDD</h4>
-                        <p class="committee-source">UKM LAOS</p>
-                        <!-- <iframe 
-                            src="Pelatihan Linux/ADITYA DWI FERDIANSYAH.pdf" 
-                            title="Sertifikat Pelatihan Linux"
-                            style="width: 100%; height: 420px; border: 0;"
-                            loading="lazy"
-                        ></iframe> -->
-                        <div style="text-align:right; margin-top: 8px;">
-                            <a class="cta-btn ghost" href="Pelatihan Linux/ADITYA DWI FERDIANSYAH.pdf" target="_blank" rel="noopener">Lihat Sertifikat</a>
+                    <div class="organization-card bg-gray-800 border border-gray-700 rounded-lg overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50">
+                        <img class="organization-img w-full h-64 object-cover" src="assets/images/HMIF-PICT.JPG" alt="HMIF UNEJ" loading="lazy"/>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Himpunan Mahasiswa Informatika</h3>
+                            <p class="organization-role text-sm font-semibold text-blue-500 mb-3">Anggota Divisi Media dan Teknologi</p>
+                            <p class="organization-desc text-gray-400 text-sm">Menjadi anggota divisi media yang bertanggung jawab untuk mengelola konten sosial media HMIF Universitas Jember.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-certificates" id="naveria-certificate">
-            <div class="container">
-                <h2 class="nama-section">Certificates</h2>
-                <div class="certificate-grid">
-                    <div class="certificate-card">
-                        <a href="Dicoding/sertifikat_course_653_4235558_270225002605.pdf" target="_blank" rel="noopener">
-                            <img class="cert-thumb" src="assets/images/certificates/sertif-dicoding-1.png" alt="Dicoding Certificate 1" loading="lazy" />
-                        </a>
-                        <h3>Belajar Dasar AI</h3>
-                        <p class="certificate-source">Dicoding</p>
+        <section class="section-committee py-16 scroll-m-20" id="naveria-committee">
+            <div class="container-committee max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="nama-section text-3xl font-bold text-white text-center mb-12">Committee</h2>
+                <div class="committee-list grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="committee-item bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50">
+                        <h4 class="text-lg font-semibold text-white mb-1">Friendship Competition as Staff PDD</h4>
+                        <p class="committee-source text-sm text-gray-500 mb-4">BEM Fasilkom</p>
+                        <div class="text-right mt-4">
+                            <a class_name="cta-btn ghost inline-flex items-center px-5 py-2 bg-transparent border border-blue-600 text-blue-600 text-sm font-medium rounded-md hover:bg-blue-600/10 transition-all" href="Friendship/Aditya Dwi Ferdiansyah.pdf" target="_blank" rel="noopener">Lihat Sertifikat</a>
+                        </div>
                     </div>
-                    <div class="certificate-card">
-                        <a href="Dicoding/Python/sertifikat_course_86_4235558_150725140219.pdf" target="_blank" rel="noopener">
-                            <img class="cert-thumb" src="assets/images/certificates/sertif-dicoding-2.png" alt="Dicoding Certificate 2" loading="lazy" />
-                        </a>
-                        <h3>Memulai Pemrograman dengan Python</h3>
-                        <p class="certificate-source">Dicoding</p>
-                    </div>
-                    <div class="certificate-card">
-                        <a href="Udemy/Python Programming Bootcamp/UC-f0d667e1-d260-4db8-8b25-6e7c93b1f74f.pdf" target="_blank" rel="noopener">
-                            <img class="cert-thumb" src="assets/images/certificates/sertif-udemy.png" alt="Udemy Certificate" loading="lazy" />
-                        </a>
-                        <h3>Python Programming Bootcamp</h3>
-                        <p class="certificate-source">Udemy</p>
-                    </div>
-                    <div class="certificate-card">
-                        <a href="IBM/Data Science for Beginner/Coursera Python for DS, AI & Development.pdf" target="_blank" rel="noopener">
-                            <img class="cert-thumb" src="assets/images/certificates/sertif-ibm.png" alt="IBM/Coursera Certificate" loading="lazy" />
-                        </a>
-                        <h3>Python for Data Science, AI & Software Development</h3>
-                        <p class="certificate-source">Coursera</p>
-                    </div>
-                    <div class="certificate-card">
-                        <a href="assets/images/certificates/sertif-my-skill.png" target="_blank" rel="noopener">
-                            <img class="cert-thumb" src="assets/images/certificates/sertif-my-skill.png" alt="MySkill Certificate" loading="lazy" />
-                        </a>
-                        <h3>AI for Software Engineer</h3>
-                        <p class="certificate-source">MySkill ID</p>
-                    </div>
-                    <div class="certificate-card">
-                        <a href="assets/images/certificates/sertif-my-skill-2.png" target="_blank" rel="noopener">
-                            <img class="cert-thumb" src="assets/images/certificates/sertif-my-skill-2.png" alt="MySkill Certificate 2" loading="lazy" />
-                        </a>
-                        <h3>Artificial Intelligence</h3>
-                        <p class="certificate-source">MySkill ID</p>
+                    <div class="committee-item bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50">
+                        <h4 class="text-lg font-semibold text-white mb-1">Pelatihan Linux as Staff PDD</h4>
+                        <p class="committee-source text-sm text-gray-500 mb-4">UKM LAOS</p>
+                        <div class="text-right mt-4">
+                            <a class="cta-btn ghost inline-flex items-center px-5 py-2 bg-transparent border border-blue-600 text-blue-600 text-sm font-medium rounded-md hover:bg-blue-600/10 transition-all" href="Pelatihan Linux/ADITYA DWI FERDIANSYAH.pdf" target="_blank" rel="noopener">Lihat Sertifikat</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-            <section class="section-portofolio" id="naveria-portofollio">
-                <div class="container">
-                    <h2 class="nama-section">Naveria's Portofolio 2024!</h2>
-                    <div class="portfolio-viewer">
-                        <iframe 
-                            src="assets/pdf/Aditya F. Portofolio.pdf" 
-                            title="Aditya F. Portofolio"
-                            style="width: 100%; height: 800px; border: 0;"
-                            loading="lazy"
-                        ></iframe>
-                        <div style="margin-top: 12px; text-align: right;">
-                            <a class="cta-btn" href="assets/pdf/Aditya F. Portofolio.pdf" target="_blank" rel="noopener">Lihat  Portofolio</a>
-                        </div>
+        <section class="section-certificates py-16 bg-gray-800/30 scroll-m-20" id="naveria-certificate">
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="nama-section text-3xl font-bold text-white text-center mb-12">Certificates</h2>
+                <div class="certificate-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="certificate-card bg-gray-800 border border-gray-700 rounded-lg p-6 text-center transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <a href="Dicoding/sertifikat_course_653_4235558_270225002605.pdf" target="_blank" rel="noopener" class="block mb-4">
+                            <img class="cert-thumb w-full aspect-video object-cover rounded-md border border-gray-700 transition-transform duration-300 hover:scale-105" src="assets/images/certificates/sertif-dicoding-1.png" alt="Dicoding Certificate 1" loading="lazy" />
+                        </a>
+                        <h3 class="text-md font-semibold text-white mb-1">Belajar Dasar AI</h3>
+                        <p class="certificate-source text-sm text-gray-500">Dicoding</p>
+                    </div>
+                    <div class="certificate-card bg-gray-800 border border-gray-700 rounded-lg p-6 text-center transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <a href="Dicoding/Python/sertifikat_course_86_4235558_150725140219.pdf" target="_blank" rel="noopener" class="block mb-4">
+                            <img class="cert-thumb w-full aspect-video object-cover rounded-md border border-gray-700 transition-transform duration-300 hover:scale-105" src="assets/images/certificates/sertif-dicoding-2.png" alt="Dicoding Certificate 2" loading="lazy" />
+                        </a>
+                        <h3 class="text-md font-semibold text-white mb-1">Memulai Pemrograman dengan Python</h3>
+                        <p class="certificate-source text-sm text-gray-500">Dicoding</p>
+                    </div>
+                    <div class="certificate-card bg-gray-800 border border-gray-700 rounded-lg p-6 text-center transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <a href="Udemy/Python Programming Bootcamp/UC-f0d667e1-d260-4db8-8b25-6e7c93b1f74f.pdf" target="_blank" rel="noopener" class="block mb-4">
+                            <img class="cert-thumb w-full aspect-video object-cover rounded-md border border-gray-700 transition-transform duration-300 hover:scale-105" src="assets/images/certificates/sertif-udemy.png" alt="Udemy Certificate" loading="lazy" />
+                        </a>
+                        <h3 class="text-md font-semibold text-white mb-1">Python Programming Bootcamp</h3>
+                        <p class="certificate-source text-sm text-gray-500">Udemy</p>
+                    </div>
+                    <div class="certificate-card bg-gray-800 border border-gray-700 rounded-lg p-6 text-center transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <a href="IBM/Data Science for Beginner/Coursera Python for DS, AI & Development.pdf" target="_blank" rel="noopener" class="block mb-4">
+                            <img class="cert-thumb w-full aspect-video object-cover rounded-md border border-gray-700 transition-transform duration-300 hover:scale-105" src="assets/images/certificates/sertif-ibm.png" alt="IBM/Coursera Certificate" loading="lazy" />
+                        </a>
+                        <h3 class="text-md font-semibold text-white mb-1">Python for Data Science, AI & Dev</h3>
+                        <p class="certificate-source text-sm text-gray-500">Coursera</p>
+                    </div>
+                    <div class="certificate-card bg-gray-800 border border-gray-700 rounded-lg p-6 text-center transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <a href="assets/images/certificates/sertif-my-skill.png" target="_blank" rel="noopener" class="block mb-4">
+                            <img class="cert-thumb w-full aspect-video object-cover rounded-md border border-gray-700 transition-transform duration-300 hover:scale-105" src="assets/images/certificates/sertif-my-skill.png" alt="MySkill Certificate" loading="lazy" />
+                        </a>
+                        <h3 class="text-md font-semibold text-white mb-1">AI for Software Engineer</h3>
+                        <p class="certificate-source text-sm text-gray-500">MySkill ID</p>
+                    </div>
+                    <div class="certificate-card bg-gray-800 border border-gray-700 rounded-lg p-6 text-center transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50 hover:-translate-y-1">
+                        <a href="assets/images/certificates/sertif-my-skill-2.png" target="_blank" rel="noopener" class="block mb-4">
+                            <img class="cert-thumb w-full aspect-video object-cover rounded-md border border-gray-700 transition-transform duration-300 hover:scale-105" src="assets/images/certificates/sertif-my-skill-2.png" alt="MySkill Certificate 2" loading="lazy" />
+                        </a>
+                        <h3 class="text-md font-semibold text-white mb-1">Artificial Intelligence</h3>
+                        <p class="certificate-source text-sm text-gray-500">MySkill ID</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <section class="section-portofolio py-16 scroll-m-20" id="naveria-portofollio">
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="nama-section text-3xl font-bold text-white text-center mb-12">Naveria's Portofolio 2024!</h2>
+                <div class="portfolio-viewer bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50">
+                    <iframe 
+                        src="assets/pdf/Aditya F. Portofolio.pdf" 
+                        title="Aditya F. Portofolio"
+                        class="w-full h-[600px] md:h-[800px] rounded-md border border-gray-700"
+                        loading="lazy"
+                    ></iframe>
+                    <div classs="mt-4 text-right">
+                        <a class="cta-btn inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all" href="assets/pdf/Aditya F. Portofolio.pdf" target="_blank" rel="noopener">Lihat Portofolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer" id="contact" role="contentinfo">
-        <div class="container">
-            <button id="backToTop" aria-label="Kembali ke atas" title="Back to top">↑</button>
-            <div class="social-icons" aria-label="Tautan sosial">
-                <a class="ig" href="https://www.instagram.com/adtydwf/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-                    <img src="assets/images/social/instagram.png" alt="Instagram" />
+    <footer class="site-footer py-16 bg-gray-800/30 border-t border-gray-700/60 mt-16" id="contact" role="contentinfo">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <button id="backToTop" aria-label="Kembali ke atas" title="Back to top" class="fixed bottom-5 right-5 w-12 h-12 bg-gray-700 text-white rounded-lg border border-gray-600 shadow-lg cursor-pointer transition-all duration-300 opacity-0 invisible translate-y-2 hover:bg-blue-600 hover:border-blue-500">↑</button>
+            
+            <div class="social-icons flex justify-center gap-4 mb-6" aria-label="Tautan sosial">
+                <a class="group w-12 h-12 inline-flex items-center justify-center bg-gray-800 border border-gray-700 rounded-lg transition-all duration-300 hover:border-blue-500 hover:bg-blue-600/10 hover:-translate-y-1" href="https://www.instagram.com/adtydwf/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+                    <img src="assets/images/social/instagram.png" alt="Instagram" class="w-6 h-6" />
                 </a>
-                <a class="github" href="https://github.com/delissesu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-                    <img src="assets/images/skills/icons8-github-50.png" alt="GitHub" />
+                <a class="group w-12 h-12 inline-flex items-center justify-center bg-gray-800 border border-gray-700 rounded-lg transition-all duration-300 hover:border-blue-500 hover:bg-blue-600/10 hover:-translate-y-1" href="https://github.com/delissesu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                    <img src="assets/images/skills/icons8-github-50.png" alt="GitHub" class="w-6 h-6" />
                 </a>
-                <a class="linkedin" href="https://www.linkedin.com/in/adtyadwif" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-                    <img src="assets/images/social/linkedin.png" alt="LinkedIn" />
+                <a class="group w-12 h-12 inline-flex items-center justify-center bg-gray-800 border border-gray-700 rounded-lg transition-all duration-300 hover:border-blue-500 hover:bg-blue-600/10 hover:-translate-y-1" href="https://www.linkedin.com/in/adtyadwif" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                    <img src="assets/images/social/linkedin.png" alt="LinkedIn" class="w-6 h-6" />
                 </a>
             </div>
-            <div style="text-align: center;">
+            <div class="text-center text-gray-500 text-sm">
                 <p>naveriaworks@gmail.com</p>
             </div>
         </div>
