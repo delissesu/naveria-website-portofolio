@@ -25,23 +25,136 @@
     </script>
 
     <style>
-        /* Menambahkan style kustom untuk kelas yg dikontrol JS */
         html {
             scroll-behavior: smooth;
         }
         
-        /* Ini adalah kelas "active" yang ditambahkan oleh script.js Anda */
         .site-nav-links a.active {
             color: #3b82f6;
             background-color: rgba(59, 130, 246, 0.1);
             font-weight: 600;
         }
 
-        /* Ini adalah kelas "show" yang ditambahkan oleh script.js Anda */
         #backToTop.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(14, 165, 233, 0.6);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInDown {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        .animate-fadeInUp,
+        .animate-fadeInDown,
+        .animate-scaleIn,
+        .animate-slideInLeft,
+        .animate-slideInRight {
+            opacity: 0;
         }
     </style>
 </head>
@@ -68,34 +181,32 @@
 
     <main id="content" role="main" class="pt-16">
         
-        <section class="section-hero pt-24 pb-32 scroll-m-20" id="home">
+<section class="section-hero pt-24 pb-32 scroll-m-20" id="home">
             <div class="container-hero max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="hero-grid grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    
                     <div class="about-copy text-center md:text-left order-2 md:order-1">
-                        <p class="skills-point text-sm font-semibold text-sky-400 uppercase tracking-wider mb-4">Beginner Software Developer & Video Editor</p>
-                        <h1 class="my-name text-5xl lg:text-7xl font-extrabold text-slate-100 mb-6">Aditya Dwi F.</h1>
-                        <p class="self-description text-lg text-slate-400 max-w-xl mx-auto md:mx-0 mb-8">Halo! Saya seorang mahasiswa Informatika yang antusias dengan pengembangan perangkat lunak dan dunia kreatif. Saya memiliki rasa penasaran yang tinggi serta kemampuan beradaptasi yang cepat.</p>
-                        <div class="hero-ctas flex flex-wrap gap-4 justify-center md:justify-start">
+                        <p class="skills-point text-sm font-semibold text-sky-400 uppercase tracking-wider mb-4 animate-fadeInDown">Beginner Software Developer & Video Editor</p>
+                        <h1 class="my-name text-5xl lg:text-7xl font-extrabold text-slate-100 mb-6 animate-fadeInUp delay-100">Aditya Dwi F.</h1>
+                        <p class="self-description text-lg text-slate-400 max-w-xl mx-auto md:mx-0 mb-8 animate-fadeInUp delay-200">Halo! Saya seorang mahasiswa Informatika yang antusias dengan pengembangan perangkat lunak dan dunia kreatif. Saya memiliki rasa penasaran yang tinggi serta kemampuan beradaptasi yang cepat.</p>
+                        <div class="hero-ctas flex flex-wrap gap-4 justify-center md:justify-start animate-fadeInUp delay-300">
                             <a class="cta-btn inline-flex items-center px-8 py-3 bg-sky-500 text-white font-bold rounded-full shadow-lg shadow-sky-500/30 hover:bg-sky-600 transition-all transform hover:-translate-y-1" href="#contact">Contact Me</a>
                             <a class="cta-btn ghost inline-flex items-center px-8 py-3 bg-transparent border-2 border-slate-600 text-slate-300 font-bold rounded-full hover:bg-slate-800 hover:border-slate-500 transition-all transform hover:-translate-y-1" href="assets/pdf/2024_CV_Aditya Dwi Ferdiansyah.pdf" download="Aditya_Dwi_Ferdiansyah_CV_2024.pdf" target="_blank" rel="noopener">Download CV</a>
                         </div>
                     </div>
-                    <div class="hero-portrait relative w-full max-w-sm mx-auto aspect-square order-1 md:order-2 group">
-                        <div class="absolute -inset-2 bg-gradient-to-br from-sky-500 to-blue-700 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition duration-500"></div>
-                        <img src="assets/images/Aditya.png" alt="Foto Aditya" class="relative w-full h-full object-cover object-[center_30%] rounded-full transition-transform duration-500 group-hover:scale-105" />
+                    
                     </div>
-                </div>
             </div>
-        </section>
+        </section>  
         
         <section class="section-skills py-24 bg-slate-900/70 scroll-m-20" id="naveria-skills">
             <div class="container-skills max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-fadeInDown">
                     <h2 class="nama-section text-4xl font-bold text-white mb-4">Hard Skills</h2>
                     <p class="text-slate-400 max-w-2xl mx-auto">Kumpulan teknologi dan alat yang saya gunakan untuk membangun dan menciptakan sesuatu.</p>
                 </div>
                 <div class="skills-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-6">
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-100">
                         <img src="assets/images/skills/figma.png" alt="Figma Logo" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">Figma</span>
                     </div>
@@ -107,27 +218,27 @@
                         <img src="assets/images/skills/python.png" alt="Python Logo" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">Python</span>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-200">
                         <img src="assets/images/skills/html.png" alt="HTML Logo" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">HTML</span>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-300">
                         <img src="assets/images/skills/css-3.png" alt="CSS Logo" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">CSS</span>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-400">
                         <img src="assets/images/skills/icons8-postgresql.svg" alt="PostgreSQL Logo" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">PostgreSQL</span>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-500">
                         <img src="assets/images/skills/1691819804alight-motion-logo-png.png" alt="Alight Motion" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">Alight Motion</span>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-600">
                         <img src="assets/images/skills/c-.png" alt="C++" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">C++</span>
                     </div>
-                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="skill-card bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-100">
                         <img src="assets/images/skills/c-sharp.png" alt="C#" class="w-14 h-14 object-contain">
                         <span class="font-semibold text-slate-300 text-sm text-center">C#</span>
                     </div>
@@ -137,24 +248,24 @@
 
         <section class="section-soft-skills py-24 scroll-m-20" id="naveria-soft-skills">
             <div class="container-soft-skills max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-fadeInDown">
                     <h2 class="nama-section text-4xl font-bold text-white mb-4">Soft Skills</h2>
                     <p class="text-slate-400 max-w-2xl mx-auto">Keterampilan non-teknis yang mendukung kolaborasi, kepemimpinan, dan pertumbuhan pribadi.</p>
                 </div>
                 <div class="soft-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-100">
                         <h3 class="text-xl font-bold text-white mb-4">Team Management</h3>
                         <p class="text-slate-400">Mampu membagi peran, mengatur prioritas, dan menjaga ritme kerja tim agar target tercapai.</p>
                     </div>
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-200">
                         <h3 class="text-xl font-bold text-white mb-4">Communication</h3>
                         <p class="text-slate-400">Terbiasa menyampaikan ide secara jelas, menerima feedback, dan menjaga komunikasi.</p>
                     </div>
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-300">
                         <h3 class="text-xl font-bold text-white mb-4">Interpersonal Skill</h3>
                         <p class="text-slate-400">Membangun hubungan ke rekan yang lain dengan positif dan saling menghargai satu sama lain.</p>
                     </div>
-                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2">
+                    <div class="soft-card bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:shadow-2xl hover:shadow-sky-900/50 hover:-translate-y-2 animate-fadeInUp delay-400">
                         <h3 class="text-xl font-bold text-white mb-4">Emotional Intelligence</h3>
                         <p class="text-slate-400">Mengelola emosi dan empati dalam tim, membantu penyelesaian konflik.</p>
                     </div>
@@ -164,19 +275,19 @@
 
         <section class="section-experience py-24 bg-slate-900/70 scroll-m-20" id="naveria-experience">
             <div class="container-experience max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-fadeInDown">
                     <h2 class="nama-section text-4xl font-bold text-white mb-4">My Experience</h2>
                     <p class="text-slate-400 max-w-2xl mx-auto">Perjalanan profesional dan proyek yang telah saya kerjakan sejauh ini.</p>
                 </div>
                 <div class="exp-grid grid grid-cols-1 gap-8">
-                    <div class="exp-card relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800">
+                    <div class="exp-card relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 animate-slideInLeft delay-100">
                         <div class="absolute top-8 -left-4 w-px h-[calc(100%-4rem)] bg-slate-700 group-hover:bg-sky-500 transition-colors duration-300"></div>
                         <div class="absolute top-8 -left-6 w-4 h-4 bg-slate-700 rounded-full group-hover:bg-sky-500 transition-colors duration-300"></div>
                         <p class="exp-year text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">2024</p>
                         <h3 class="text-xl font-bold text-white mb-3">Social Media Designer</h3>
                         <p class="exp-desc text-slate-400">Membuat dan mengelola materi branding media sosial untuk seorang guru di Surabaya, termasuk penyusunan konten, editing video, dan pembuatan desain poster.</p>
                     </div>
-                    <div class="exp-card relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800">
+                    <div class="exp-card relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 animate-slideInRight delay-200">
                         <div class="absolute top-8 -left-4 w-px h-[calc(100%-4rem)] bg-slate-700 group-hover:bg-sky-500 transition-colors duration-300"></div>
                         <div class="absolute top-8 -left-6 w-4 h-4 bg-slate-700 rounded-full group-hover:bg-sky-500 transition-colors duration-300"></div>
                         <p class="exp-year text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">September 2024 – Now</p>
@@ -189,12 +300,12 @@
 
         <section class="section-organization py-24 scroll-m-20" id="naveria-organization">
             <div class="container-organization max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-fadeInDown">
                     <h2 class="nama-section text-4xl font-bold text-white mb-4">Organization</h2>
                     <p class="text-slate-400 max-w-2xl mx-auto">Keterlibatan saya dalam organisasi kemahasiswaan untuk mengembangkan diri.</p>
                 </div>
                 <div class="organization-grid">
-                    <div class="organization-card bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+                    <div class="organization-card bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50 animate-scaleIn delay-100">
                         <img class="organization-img w-full h-64 object-cover" src="assets/images/HMIF-PICT.JPG" alt="HMIF UNEJ" loading="lazy"/>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-2">Himpunan Mahasiswa Informatika</h3>
@@ -208,12 +319,12 @@
 
         <section class="section-committee py-24 bg-slate-900/70 scroll-m-20" id="naveria-committee">
             <div class="container-committee max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-fadeInDown">
                     <h2 class="nama-section text-4xl font-bold text-white mb-4">Committee</h2>
                     <p class="text-slate-400 max-w-2xl mx-auto">Pengalaman saya berkontribusi dalam berbagai kepanitiaan acara.</p>
                 </div>
                 <div class="committee-list grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="committee-item flex flex-col bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="committee-item flex flex-col bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-100">
                         <div class="flex-grow">
                             <h4 class="text-xl font-bold text-white mb-2">Friendship Competition</h4>
                             <p class="committee-source text-sm text-slate-400 mb-4">Staff PDD - BEM Fasilkom</p>
@@ -222,7 +333,7 @@
                             <a class="cta-btn ghost inline-flex items-center px-6 py-2 bg-transparent border border-slate-600 text-slate-300 text-sm font-semibold rounded-full hover:bg-slate-700 hover:border-slate-500 transition-all" href="Friendship/Aditya Dwi Ferdiansyah.pdf" target="_blank" rel="noopener">Lihat Sertifikat</a>
                         </div>
                     </div>
-                    <div class="committee-item flex flex-col bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="committee-item flex flex-col bg-slate-800/50 border border-slate-700 rounded-xl p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-200">
                         <div class="flex-grow">
                             <h4 class="text-xl font-bold text-white mb-2">Pelatihan Linux</h4>
                             <p class="committee-source text-sm text-slate-400 mb-4">Staff PDD - UKM LAOS</p>
@@ -237,30 +348,57 @@
 
         <section class="section-certificates py-24 scroll-m-20" id="naveria-certificate">
             <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-fadeInDown">
                     <h2 class="nama-section text-4xl font-bold text-white mb-4">Certificates</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Bukti pencapaian dan pembelajaran saya dari berbagai platform kredibel.</p>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Bukti pencapaian dan pembelajaran saya dari berbagai platform.</p>
                 </div>
                 <div class="certificate-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-100">
                         <a href="Dicoding/sertifikat_course_653_4235558_270225002605.pdf" target="_blank" rel="noopener" class="block overflow-hidden">
-                            <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-dicoding-1.png" alt="Dicoding Certificate 1" loading="lazy" />
+                            <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-dicoding-1.png" alt="Dicoding Certificate AI" loading="lazy" />
                         </a>
                         <div class="p-6">
                             <h3 class="text-lg font-bold text-white mb-1">Belajar Dasar AI</h3>
                             <p class="certificate-source text-sm text-slate-400">Dicoding</p>
                         </div>
                     </div>
-                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-200">
                         <a href="Dicoding/Python/sertifikat_course_86_4235558_150725140219.pdf" target="_blank" rel="noopener" class="block overflow-hidden">
-                            <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-dicoding-2.png" alt="Dicoding Certificate 2" loading="lazy" />
+                            <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-dicoding-2.png" alt="Dicoding Certificate Python" loading="lazy" />
                         </a>
                         <div class="p-6">
                             <h3 class="text-lg font-bold text-white mb-1">Memulai Pemrograman dengan Python</h3>
                             <p class="certificate-source text-sm text-slate-400">Dicoding</p>
                         </div>
                     </div>
-                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-300">
+                        <a href="Dicoding/Javascript/sertifikat_course_256_4235558_240925212426.pdf" target="_blank" rel="noopener" class="block overflow-hidden">
+                            <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-dasar-js.png" alt="Dicoding Certificate Javascript" loading="lazy" />
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-1">Belajar Dasar Pemrograman JavaScript</h3>
+                            <p class="certificate-source text-sm text-slate-400">Dicoding</p>
+                        </div>
+                    </div>
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-400">
+                        <a href="Dicoding/Belajar Visualisasi Data/sertifikat_course_177_4235558_231025075825.pdf" target="_blank" rel="noopener" class="block overflow-hidden">
+                            <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-visualisasi.png" alt="Dicoding Certificate Visualisasi Data" loading="lazy" />
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-1">Belajar Visualisasi Data</h3>
+                            <p class="certificate-source text-sm text-slate-400">Dicoding</p>
+                        </div>
+                    </div>
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-500">
+                        <a href="Dicoding/Financial Literacy/sertifikat_course_852_4235558_231025080542.pdf" target="_blank" rel="noopener" class="block overflow-hidden">
+                            <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-financial-literacy.png" alt="Dicoding Certificate Financial Literacy" loading="lazy" />
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-1">Financial Literacy</h3>
+                            <p class="certificate-source text-sm text-slate-400">Dicoding</p>
+                        </div>
+                    </div>
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-600">
                         <a href="Udemy/Python Programming Bootcamp/UC-f0d667e1-d260-4db8-8b25-6e7c93b1f74f.pdf" target="_blank" rel="noopener" class="block overflow-hidden">
                             <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-udemy.png" alt="Udemy Certificate" loading="lazy" />
                         </a>
@@ -269,7 +407,7 @@
                             <p class="certificate-source text-sm text-slate-400">Udemy</p>
                         </div>
                     </div>
-                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-100">
                         <a href="IBM/Data Science for Beginner/Coursera Python for DS, AI & Development.pdf" target="_blank" rel="noopener" class="block overflow-hidden">
                             <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-ibm.png" alt="IBM/Coursera Certificate" loading="lazy" />
                         </a>
@@ -278,7 +416,7 @@
                             <p class="certificate-source text-sm text-slate-400">Coursera</p>
                         </div>
                     </div>
-                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-200">
                         <a href="assets/images/certificates/sertif-my-skill.png" target="_blank" rel="noopener" class="block overflow-hidden">
                             <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-my-skill.png" alt="MySkill Certificate" loading="lazy" />
                         </a>
@@ -287,7 +425,7 @@
                             <p class="certificate-source text-sm text-slate-400">MySkill ID</p>
                         </div>
                     </div>
-                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2">
+                    <div class="certificate-card group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-800 hover:-translate-y-2 animate-fadeInUp delay-300">
                         <a href="assets/images/certificates/sertif-my-skill-2.png" target="_blank" rel="noopener" class="block overflow-hidden">
                             <img class="cert-thumb w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105" src="assets/images/certificates/sertif-my-skill-2.png" alt="MySkill Certificate 2" loading="lazy" />
                         </a>
@@ -302,11 +440,11 @@
 
         <section class="section-portofolio py-24 bg-slate-900/70 scroll-m-20" id="naveria-portofollio">
             <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-fadeInDown">
                     <h2 class="nama-section text-4xl font-bold text-white mb-4">Naveria's Portofolio 2024!</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Kompilasi karya dan proyek yang telah saya buat, disajikan dalam format PDF interaktif.</p>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Kompilasi karya dan proyek yang telah saya buat.</p>
                 </div>
-                <div class="portfolio-viewer bg-slate-800/50 border border-slate-700 rounded-xl p-2 sm:p-3 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+                <div class="portfolio-viewer bg-slate-800/50 border border-slate-700 rounded-xl p-2 sm:p-3 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50 animate-scaleIn delay-100">
                     <iframe 
                         src="assets/pdf/Aditya F. Portofolio.pdf" 
                         title="Aditya F. Portofolio"
@@ -319,6 +457,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer py-20 bg-slate-900 border-t border-slate-700/40 mt-24" id="contact" role="contentinfo">
