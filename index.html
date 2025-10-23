@@ -24,7 +24,7 @@
         }
     </script>
 
-    <style type="text/tailwindcss">
+    <style>
         /* Menambahkan style kustom untuk kelas yg dikontrol JS */
         html {
             scroll-behavior: smooth;
@@ -32,17 +32,16 @@
         
         /* Ini adalah kelas "active" yang ditambahkan oleh script.js Anda */
         .site-nav-links a.active {
-            @apply text-blue-500 bg-blue-500/10 font-semibold;
+            color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.1);
+            font-weight: 600;
         }
 
         /* Ini adalah kelas "show" yang ditambahkan oleh script.js Anda */
         #backToTop.show {
-            @apply opacity-100 visible translate-y-0;
-        }
-
-        /* Memberi sedikit filter pada ikon sosial di footer */
-        .social-icons img {
-            @apply filter invert brightness-100 opacity-75 group-hover:opacity-100 transition-opacity;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -199,7 +198,7 @@
                         <h4 class="text-lg font-semibold text-white mb-1">Friendship Competition as Staff PDD</h4>
                         <p class="committee-source text-sm text-gray-500 mb-4">BEM Fasilkom</p>
                         <div class="text-right mt-4">
-                            <a class_name="cta-btn ghost inline-flex items-center px-5 py-2 bg-transparent border border-blue-600 text-blue-600 text-sm font-medium rounded-md hover:bg-blue-600/10 transition-all" href="Friendship/Aditya Dwi Ferdiansyah.pdf" target="_blank" rel="noopener">Lihat Sertifikat</a>
+                            <a class="cta-btn ghost inline-flex items-center px-5 py-2 bg-transparent border border-blue-600 text-blue-600 text-sm font-medium rounded-md hover:bg-blue-600/10 transition-all" href="Friendship/Aditya Dwi Ferdiansyah.pdf" target="_blank" rel="noopener">Lihat Sertifikat</a>
                         </div>
                     </div>
                     <div class="committee-item bg-gray-800 border border-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-900/50">
@@ -273,7 +272,7 @@
                         class="w-full h-[600px] md:h-[800px] rounded-md border border-gray-700"
                         loading="lazy"
                     ></iframe>
-                    <div classs="mt-4 text-right">
+                    <div class="mt-4 text-right">
                         <a class="cta-btn inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all" href="assets/pdf/Aditya F. Portofolio.pdf" target="_blank" rel="noopener">Lihat Portofolio</a>
                     </div>
                 </div>
